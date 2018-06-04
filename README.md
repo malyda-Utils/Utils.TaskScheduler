@@ -1,7 +1,7 @@
-# TaskScheduler
-Konzolová aplikace, která vytváøí plánované úlohy. Pracuje s Plánovaèem úloh OS Windows.
+ï»¿# TaskScheduler
+KonzolovÃ¡ aplikace, kterÃ¡ vytvÃ¡Å™Ã­ plÃ¡novanÃ© Ãºlohy. Pracuje s PlÃ¡novaÄem Ãºloh OS Windows.
 
-Plánovaè úloh je C# moné pouívat díky nuget balíèku **[TaskScheduler](https://www.nuget.org/packages/TaskScheduler/)**.
+PlÃ¡novaÄ Ãºloh je C# moÅ¾nÃ© pouÅ¾Ã­vat dÃ­ky nuget balÃ­Äku **[TaskScheduler](https://www.nuget.org/packages/TaskScheduler/)**.
 ```csharp
 using Microsoft.Win32.TaskScheduler;
 ```
@@ -17,23 +17,23 @@ using (TaskService ts = new TaskService())
 }
 ```
 ---
-Aplikace vytváøející úlohy se skládá z èástí:
-* TaskSchedulerClient -> .Net Core konzolová aplikace
-* TaskSchedulerLib -> .Net Standard knihovna ovládající Win32 TaskScheduler
+Aplikace vytvÃ¡Å™ejÃ­cÃ­ Ãºlohy se sklÃ¡dÃ¡ z ÄÃ¡stÃ­:
+* TaskSchedulerClient -> .Net Core konzolovÃ¡ aplikace
+* TaskSchedulerLib -> .Net Standard knihovna ovlÃ¡dajÃ­cÃ­ Win32 TaskScheduler
 
 ![Task Scheduler](Resources/TaskScheduler.gif)
 
-## Pouití
-**Klientská èás**:
-1) Pøidat referenci na knihovnu TaskSchedulerLib do projektu
+## PouÅ¾itÃ­
+**KlientskÃ¡ ÄÃ¡sÅ¥**:
+1) PÅ™idat referenci na knihovnu TaskSchedulerLib do projektu
 ```csharp
 using Utils.TaskSchedulerLib;
 ```
-2) Vytvoøit instanci TaskManager -> tøídy knihovny, která obsluhuje úlohu
+2) VytvoÅ™it instanci TaskManager -> tÅ™Ã­dy knihovny, kterÃ¡ obsluhuje Ãºlohu
 ```csharp
 TaskSchedulerManager taskSchedulerManager = new TaskSchedulerManager();
 ```
-3) Vytváøení plánovanıch úloh 
+3) VytvÃ¡Å™enÃ­ plÃ¡novanÃ½ch Ãºloh 
 ```csharp
 // Scheduled task name
 taskSchedulerManager.TaskName = "Scheduled task name";
@@ -42,7 +42,7 @@ taskSchedulerManager.SetExecAction("notepad.exe", "c:\\test.log", null);
 
 taskSchedulerManager.CreateSampleTask();
 ```
-4) Mazání vytvoøené úlohy
+4) MazÃ¡nÃ­ vytvoÅ™enÃ© Ãºlohy
 ```csharp
 taskSchedulerManager.DeleteSampleTask();
 ```
